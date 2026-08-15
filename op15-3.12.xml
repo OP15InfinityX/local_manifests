@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- OP15InfinityX repositories maintained on the 3.12 branch. -->
+  <remove-project path="build/soong" />
+  <project path="build/soong" name="OP15InfinityX/android_build_soong" remote="github" revision="refs/heads/3.12" groups="pdk,tradefed,sysui-studio" />
+
+  <remove-project path="device/lineage/sepolicy" />
+  <project path="device/lineage/sepolicy" name="OP15InfinityX/device_infinity_sepolicy" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="frameworks/av" />
+  <project path="frameworks/av" name="OP15InfinityX/frameworks_av" remote="github" revision="refs/heads/3.12" groups="pdk,sysui-studio" />
+
+  <remove-project path="frameworks/base" />
+  <project path="frameworks/base" name="OP15InfinityX/android_frameworks_base" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="frameworks/native" />
+  <project path="frameworks/native" name="OP15InfinityX/android_frameworks_native" remote="github" revision="refs/heads/3.12" groups="pdk" />
+
+  <remove-project path="lineage-sdk" />
+  <project path="lineage-sdk" name="OP15InfinityX/custom-sdk" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="packages/apps/AppLocker" />
+  <project path="packages/apps/AppLocker" name="OP15InfinityX/packages_apps_AppLocker" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="packages/apps/GameSpace" />
+  <project path="packages/apps/GameSpace" name="OP15InfinityX/packages_apps_GameSpace" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="packages/apps/InfinitySuite" />
+  <project path="packages/apps/InfinitySuite" name="OP15InfinityX/packages_apps_InfinitySuite" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="packages/apps/LineageParts" />
+  <project path="packages/apps/LineageParts" name="OP15InfinityX/packages_apps_Parts" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="packages/apps/Settings" />
+  <project path="packages/apps/Settings" name="OP15InfinityX/packages_apps_Settings" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="packages/apps/SettingsIntelligence" />
+  <project path="packages/apps/SettingsIntelligence" name="OP15InfinityX/packages_apps_SettingsIntelligence" remote="github" revision="refs/heads/3.12" groups="pdk-fs" />
+
+  <remove-project path="packages/apps/ThemeStore" />
+  <project path="packages/apps/ThemeStore" name="OP15InfinityX/packages_apps_ThemeStore" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="packages/apps/Updater" />
+  <project path="packages/apps/Updater" name="OP15InfinityX/packages_apps_Updater" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="packages/modules/Permission" />
+  <project path="packages/modules/Permission" name="OP15InfinityX/android_packages_modules_Permission" remote="github" revision="refs/heads/3.12" groups="pdk-cw-fs,pdk-fs" />
+
+  <remove-project path="packages/providers/MediaProvider" />
+  <project path="packages/providers/MediaProvider" name="OP15InfinityX/android_packages_providers_MediaProvider" remote="github" revision="refs/heads/3.12" groups="pdk-cw-fs,pdk-fs" />
+
+  <remove-project path="system/core" />
+  <project path="system/core" name="OP15InfinityX/system_core" remote="github" revision="refs/heads/3.12" groups="pdk" />
+
+  <remove-project path="system/update_engine" />
+  <project path="system/update_engine" name="OP15InfinityX/system_update_engine" remote="github" revision="refs/heads/3.12" groups="pdk" />
+
+  <remove-project path="system/vold" />
+  <project path="system/vold" name="OP15InfinityX/system_vold" remote="github" revision="refs/heads/3.12" groups="pdk" />
+
+  <remove-project path="vendor/extras" />
+  <project path="vendor/extras" name="OP15InfinityX/vendor_extras" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="vendor/infinity" />
+  <project path="vendor/infinity" name="OP15InfinityX/vendor_infinity" remote="github" revision="refs/heads/3.12" />
+
+  <remove-project path="vendor/qcom/opensource/healthd-ext" />
+  <project path="vendor/qcom/opensource/healthd-ext" name="OP15InfinityX/android_vendor_qcom_opensource_healthd-ext" remote="github" revision="refs/heads/3.12" groups="qcom,pakala-vendor" />
+</manifest>
