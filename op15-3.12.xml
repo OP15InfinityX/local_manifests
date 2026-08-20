@@ -28,6 +28,9 @@
   <remove-project path="packages/apps/InfinitySuite" />
   <project path="packages/apps/InfinitySuite" name="OP15InfinityX/packages_apps_InfinitySuite" remote="github" revision="refs/heads/3.12" />
 
+  <remove-project path="packages/apps/Launcher3" />
+  <project path="packages/apps/Launcher3" name="OP15InfinityX/packages_apps_Launcher3" remote="github" revision="refs/heads/3.12" groups="pdk-cw-tvc,pdk-fs,sysui-studio" />
+
   <remove-project path="packages/apps/LineageParts" />
   <project path="packages/apps/LineageParts" name="OP15InfinityX/packages_apps_Parts" remote="github" revision="refs/heads/3.12" />
 
