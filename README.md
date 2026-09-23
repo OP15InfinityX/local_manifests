@@ -5,8 +5,9 @@ Local manifests and build instructions for Infinity-X 3.12 on the OnePlus 15
 
 ## What these manifests include
 
-- OnePlus 15 device, common-device, camera, kernel, hardware, and Qualcomm trees.
-- The Android 16 Linux 6.12 kernel-platform dependencies.
+- OnePlus 15 device, common-device, camera, hardware, and Qualcomm trees.
+- The source-built OP15InfinityX OSS kernel, modules, and device trees.
+- The Android 16 `android16-6.12-2026-06` GKI base (Linux 6.12.81).
 - OP15InfinityX platform forks on the `3.12` branch.
 
 ## Requirements
@@ -130,6 +131,7 @@ out/target/product/infiniti/
 ## Notes
 
 - Use `infinity_infiniti-user`, not `userdebug`.
+- The manifests build the OSS kernel inline; no prebuilt kernel tree is used.
 - Keep the firmware source at 16.0.8 GLO when regenerating proprietary files.
 - Run `repo sync` from the Android source root.
 - `--force-sync` may replace Git metadata for projects whose upstream source is
