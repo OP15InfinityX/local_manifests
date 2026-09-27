@@ -27,6 +27,14 @@ Do not combine these XML files with the 3.12 local manifests: they override many
 of the same project paths. Back up personal changes before syncing an existing
 tree. The OP15-specific forks referenced here use the `4.0` branch.
 
+The manifests follow the same three-file layout as the 3.12 branch:
+
+- `infiniti.xml`: device, common, camera, hardware and CAF dependencies.
+- `infiniti-kernel.xml`: source-built kernel, modules and devicetrees.
+- `op15-4.0.xml`: ROM/platform repository overrides.
+
+All three XML files are loaded automatically by repo.
+
 ## Extract proprietary files
 
 Download the full OnePlus 15 OxygenOS **16.0.8 GLO** OTA. Extract the logical
