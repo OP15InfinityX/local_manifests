@@ -1,138 +1,74 @@
-# OnePlus 15 Infinity-X 3.12 local manifests
+# OnePlus 15 Infinity-X 4.0
 
-Local manifests and build instructions for Infinity-X 3.12 on the OnePlus 15
-(`infiniti`).
+Local manifests for Infinity-X 4.0 / Android 17 on the OnePlus 15 (`infiniti`).
 
-## What these manifests include
+This branch keeps the tested Infinity-X 3.12 device/common baseline, adds the
+required Android 17 adaptations, and retains OxygenOS **16.0.8 GLO** proprietary
+files. Audio and display HALs remain stock. The kernel is built from source:
+Linux **6.12.81**, including the existing panel and module fixes.
 
-- OnePlus 15 device, common-device, camera, hardware, and Qualcomm trees.
-- The source-built OP15InfinityX OSS kernel, modules, and device trees.
-- The Android 16 `android16-6.12-2026-06` GKI base (Linux 6.12.81).
-- OP15InfinityX platform forks on the `3.12` branch.
+## Sync
 
-## Requirements
-
-- A Linux build host configured for Android builds.
-- `repo`, Git, and Git LFS.
-- Enough storage and memory for a complete Android source checkout and build.
-- The full OnePlus 15 OxygenOS **16.0.8 GLO** firmware for proprietary files.
-
-## Initialize a fresh source tree
-
-Create and enter an empty source directory:
-
-```bash
-mkdir -p ~/android/INFIX
-cd ~/android/INFIX
-```
-
-Initialize the upstream Infinity-X Android 16 manifest:
+Run in an empty source directory:
 
 ```bash
 repo init --no-repo-verify --git-lfs \
   -u https://github.com/ProjectInfinity-X/manifest \
-  -b 16 \
-  -g default,-mips,-darwin,-notdefault
-```
+  -b 17 -g default,-mips,-darwin,-notdefault
 
-Clone these local manifests **after `repo init` and before `repo sync`**:
-
-```bash
-git clone -b 3.12 \
-  https://github.com/OP15InfinityX/local_manifests \
+git clone -b 4.0 https://github.com/OP15InfinityX/local_manifests \
   .repo/local_manifests
-```
 
-Sync the complete source tree, including every project selected by the local
-manifests:
-
-```bash
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune \
   --force-sync -j$(nproc --all)
 ```
 
-## Add the manifests to an existing initialized tree
-
-From the root of a tree that has already been initialized with `repo init`:
-
-```bash
-git clone -b 3.12 \
-  https://github.com/OP15InfinityX/local_manifests \
-  .repo/local_manifests
-```
-
-If `.repo/local_manifests` already contains personal manifests, back them up or
-merge them into this checkout first. Do not overwrite local manifests you still
-need. Then run the full `repo sync` command shown above.
-
-To update an existing clone of this manifest repository later:
-
-```bash
-git -C .repo/local_manifests pull --ff-only
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune \
-  --force-sync -j$(nproc --all)
-```
+Do not combine these XML files with the 3.12 local manifests: they override many
+of the same project paths. Back up personal changes before syncing an existing
+tree. The OP15-specific forks referenced here use the `4.0` branch.
 
 ## Extract proprietary files
 
-Download the full **16.0.8 GLO** firmware for the OnePlus 15. Extract its
-logical partition images, then unpack those images into partition directories.
-The extraction source should contain directory trees such as:
+Download the full OnePlus 15 OxygenOS **16.0.8 GLO** OTA. Extract the logical
+images into partition directories (`system`, `system_ext`, `product`, `vendor`,
+`odm`, and the remaining stock partitions).
 
-```text
-OP15/
-├── odm/
-├── product/
-├── system/
-├── system_ext/
-└── vendor/
-```
-
-Run the following commands from the Android source root, setting `STOCK_ROOT`
-to the directory containing the unpacked logical partitions:
+From the ROM source root, replace the example path below with your extracted
+firmware directory. Run extraction before lunch on a fresh checkout:
 
 ```bash
-source build/envsetup.sh
-lunch infinity_infiniti-user
-
 export PYTHONPATH="$PWD/tools/extract-utils"
 export STOCK_ROOT="/path/to/extracted/OP15"
 
-python3 device/oneplus/infiniti/extract-files.py \
-  --only-target "$STOCK_ROOT"
-
-python3 device/oneplus/sm8850-common/extract-files.py \
-  --only-target "$STOCK_ROOT"
-
-python3 device/oneplus/infiniti-camera/extract-files.py \
-  --only-target "$STOCK_ROOT"
+python3 device/oneplus/infiniti/extract-files.py --only-target "$STOCK_ROOT"
+python3 device/oneplus/sm8850-common/extract-files.py --only-target "$STOCK_ROOT"
+python3 device/oneplus/infiniti-camera/extract-files.py --only-target "$STOCK_ROOT"
 ```
 
-Replace `/path/to/extracted/OP15` with the path containing your unpacked logical
-partition directories. All three extraction commands must complete successfully
-before building.
+All three commands must finish successfully. The extraction scripts include the
+required Android 17 blob fixups; copying unmodified stock blobs is not equivalent.
+Proprietary files are not uploaded to this manifest repository.
 
-## Build Infinity-X
-
-Build the `user` variant from the source root:
+## Build
 
 ```bash
+export WITH_GAPPS=true
+export USE_PREBUILT_KERNEL=false
 source build/envsetup.sh
 lunch infinity_infiniti-user
 m bacon -j$(nproc --all)
 ```
 
-Build artifacts are written under:
+Use `WITH_GAPPS=false` for Vanilla. Adjust the job count to suit your host.
+Artifacts are written to `out/target/product/infiniti/`.
 
-```text
-out/target/product/infiniti/
-```
+## Scope
 
-## Notes
-
-- Use `infinity_infiniti-user`, not `userdebug`.
-- The manifests build the OSS kernel inline; no prebuilt kernel tree is used.
-- Keep the firmware source at 16.0.8 GLO when regenerating proprietary files.
-- Run `repo sync` from the Android source root.
-- `--force-sync` may replace Git metadata for projects whose upstream source is
-  overridden by these local manifests. Commit or back up personal changes first.
+- Existing 3.12 and Lineage branches are unchanged.
+- Personal Java/dex2oat workarounds, host-specific build profiles, and diagnostic
+  ADB authorization keys are not included.
+- The additional eSIM switching fix and the unfinished SetupWizard language
+  selection changes are intentionally withheld from this publication.
+- The local device build completed successfully before publication. These
+  published branches have not yet been validated with a fresh checkout and full
+  rebuild; device behavior still needs normal testing.
