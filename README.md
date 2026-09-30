@@ -7,6 +7,26 @@ required Android 17 adaptations, and retains OxygenOS **16.0.8 GLO** proprietary
 files. Audio and display HALs remain stock. The kernel is built from source:
 Linux **6.12.81**, including the existing panel and module fixes.
 
+The `4.0` branches include the 2026-09-29 Infinity-X final feature-restoration
+merges in frameworks/base, Settings and InfinitySuite, preserving the OP15
+adaptations and duress PIN support. Custom-clock/AOD handling and the required
+HideClock, HideSmartSpace and SmartSpaceOffset overlays are included; the overlay
+packages are supplied by the upstream `packages/overlays/Themes` branch `17`.
+The ROM version is `4.0`, not `4.0-BETA`.
+
+The 2026-09-30 kernel update adds 27 selected fixes across the kernel, modules
+and devicetrees repositories. Original authors and upstream commit IDs are
+retained in the individual commits. The common kernel remains Linux 6.12.81.
+
+The tested SetupWizard locale configuration is maintained in
+`vendor/infinity/config/gms.mk`; Google binaries remain in the upstream GMS
+repository. The device disables locale-agnostic onboarding to retain language
+selection, and Settings includes the language-picker crash fix.
+
+Vanilla builds include the Infinity-X partition reserve configuration: about
+1.82 GiB in `product` and 90 MiB each in `system` and `system_ext` for later
+GApps installation. These extra reserves are not applied to GApps builds.
+
 ## Sync
 
 Run in an empty source directory:
@@ -75,8 +95,8 @@ Artifacts are written to `out/target/product/infiniti/`.
 - Existing 3.12 and Lineage branches are unchanged.
 - Personal Java/dex2oat workarounds, host-specific build profiles, and diagnostic
   ADB authorization keys are not included.
-- The additional eSIM switching fix and the unfinished SetupWizard language
-  selection changes are intentionally withheld from this publication.
-- The local device build completed successfully before publication. These
-  published branches have not yet been validated with a fresh checkout and full
-  rebuild; device behavior still needs normal testing.
+- Unfinished additional eSIM switching changes and Widevine/L1 experiments are
+  intentionally withheld from this publication.
+- The final ROM has booted on the maintainer's device. The maintainer also
+  reports the selected kernel fixes running without errors. A fresh checkout
+  and full rebuild of the complete published state have not been performed.
