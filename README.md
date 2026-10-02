@@ -18,6 +18,15 @@ The 2026-09-30 kernel update adds 27 selected fixes across the kernel, modules
 and devicetrees repositories. Original authors and upstream commit IDs are
 retained in the individual commits. The common kernel remains Linux 6.12.81.
 
+The 2026-10-02 update incorporates the reviewed official Infinity-X platform
+updates into 17 repositories, retaining the OP15 customizations and GameSpace
+callback integration. Six additional platform forks are selected by the
+manifests so a sync retrieves the reviewed state. Five selected Chandu kernel
+fix groups cover microphone-regulator failures, display fence safety, WLAN
+region/BDF fallback, touch-array bounds, and charger interface offsets. These
+are targeted adaptations, not wholesale imports of other devices' sources.
+The maintainer reports this combined update working on the device.
+
 The tested SetupWizard locale configuration is maintained in
 `vendor/infinity/config/gms.mk`; Google binaries remain in the upstream GMS
 repository. The device disables locale-agnostic onboarding to retain language

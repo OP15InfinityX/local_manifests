@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <!-- Reviewed Infinity-X platform update, tested on infiniti on 2026-10-02. -->
+  <remove-project path="build/make" />
+  <project path="build/make" name="OP15InfinityX/build" remote="github" revision="refs/heads/4.0" groups="pdk,sysui-studio" />
+  <remove-project path="frameworks/libs/systemui" />
+  <project path="frameworks/libs/systemui" name="OP15InfinityX/frameworks_libs_systemui" remote="github" revision="refs/heads/4.0" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
+  <remove-project path="frameworks/opt/telephony" />
+  <project path="frameworks/opt/telephony" name="OP15InfinityX/frameworks_opt_telephony" remote="github" revision="refs/heads/4.0" groups="pdk,sysui-studio" />
+  <remove-project path="packages/apps/LMOFreeform" />
+  <project path="packages/apps/LMOFreeform" name="OP15InfinityX/packages_apps_LMOFreeform" remote="github" revision="refs/heads/4.0" />
+  <remove-project path="packages/modules/Bluetooth" />
+  <project path="packages/modules/Bluetooth" name="OP15InfinityX/packages_modules_Bluetooth" remote="github" revision="refs/heads/4.0" groups="pdk" />
+  <remove-project path="system/fs/fs_mgr" />
+  <project path="system/fs/fs_mgr" name="OP15InfinityX/system_fs_fs_mgr" remote="github" revision="refs/heads/4.0" groups="pdk" />
   <!-- Infinity-X 4.0 platform compatibility, based on the X9U/SM8850 bring-up. -->
   <remove-project path="build/soong" />
   <project path="build/soong" name="OP15InfinityX/android_build_soong" remote="github" revision="refs/heads/4.0" groups="pdk,tradefed,sysui-studio" />
