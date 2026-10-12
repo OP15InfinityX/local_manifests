@@ -10,6 +10,10 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
+  <!-- Keep the tested device-settings resources: newer LineageOS revisions
+       remove the default doze help strings. -->
+  <remove-project path="packages/resources/devicesettings" />
+  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="github" revision="e91c79901e06b1cff702d004824af620a8b2bf9c" />
   <remove-project path="frameworks/libs/systemui" />
   <project path="frameworks/libs/systemui" name="OP15InfinityX/frameworks_libs_systemui" remote="github" revision="refs/heads/4.0" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
   <remove-project path="frameworks/opt/telephony" />
