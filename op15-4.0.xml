@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- Reviewed Infinity-X platform update, tested on infiniti on 2026-10-02. -->
+  <!-- Reviewed Infinity-X 4.1 platform update, tested on infiniti on 2026-10-13.
+       OP15 repository branches retain the 4.0 name for existing checkouts. -->
   <remove-project path="build/make" />
   <project path="build/make" name="OP15InfinityX/build" remote="github" revision="refs/heads/4.0" groups="pdk,sysui-studio">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -72,4 +73,19 @@
 
   <remove-project path="packages/apps/Launcher3" />
   <project path="packages/apps/Launcher3" name="OP15InfinityX/packages_apps_Launcher3" remote="github" revision="refs/heads/4.0" />
+
+  <!-- Keep the tested OP15 clock/Smartspace overlay layout. -->
+  <remove-project path="packages/overlays/Themes" />
+  <project path="packages/overlays/Themes" name="OP15InfinityX/packages_overlays_Themes" remote="github" revision="refs/heads/4.0" />
+
+  <!-- These repositories match official 4.1 exactly. Pin the reviewed commits
+       so a fresh sync gets the corresponding sandbox, policy and memory APIs. -->
+  <remove-project path="bionic" />
+  <project path="bionic" name="bionic" remote="infinity" revision="9eef83c6aab6019cd91df31c5fc5b7d516ff5947" groups="pdk" />
+  <remove-project path="packages/apps/Sandbox" />
+  <project path="packages/apps/Sandbox" name="packages_apps_Sandbox" remote="infinity" revision="aca849f56b83ec6707af502d44b4b66e594f1280" />
+  <remove-project path="packages/services/OmniJaws" />
+  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="infinity" revision="ab4a697b022f2cb97102c1d8a48055751f4bd27b" />
+  <remove-project path="system/sepolicy" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="infinity" revision="d125e3765296e2c64e1bbdfad7bcff90c35ac1d3" groups="pdk" />
 </manifest>

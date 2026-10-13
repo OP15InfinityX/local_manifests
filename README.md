@@ -1,6 +1,7 @@
-# OnePlus 15 Infinity-X 4.0
+# OnePlus 15 Infinity-X 4.1
 
-Local manifests for Infinity-X 4.0 / Android 17 on the OnePlus 15 (`infiniti`).
+Local manifests for Infinity-X 4.1 / Android 17 on the OnePlus 15 (`infiniti`).
+The repository branches remain named `4.0` for existing checkouts.
 
 This branch keeps the tested Infinity-X 3.12 device/common baseline, adds the
 required Android 17 adaptations, and retains OxygenOS **16.0.8 GLO** proprietary
@@ -11,8 +12,8 @@ The `4.0` branches include the 2026-09-29 Infinity-X final feature-restoration
 merges in frameworks/base, Settings and InfinitySuite, preserving the OP15
 adaptations and duress PIN support. Custom-clock/AOD handling and the required
 HideClock, HideSmartSpace and SmartSpaceOffset overlays are included; the overlay
-packages are supplied by the upstream `packages/overlays/Themes` branch `17`.
-The ROM version is `4.0`, not `4.0-BETA`.
+packages are supplied by the OP15 `packages_overlays_Themes` branch `4.0`.
+The ROM version is now `4.1`.
 
 The 2026-09-30 kernel update adds 27 selected fixes across the kernel, modules
 and devicetrees repositories. Original authors and upstream commit IDs are
@@ -26,6 +27,22 @@ fix groups cover microphone-regulator failures, display fence safety, WLAN
 region/BDF fallback, touch-array bounds, and charger interface offsets. These
 are targeted adaptations, not wholesale imports of other devices' sources.
 The maintainer reports this combined update working on the device.
+
+The 2026-10-13 update incorporates the tested official Infinity-X 4.1 changes,
+including the October 2026 security patch, official PIF boot-deadlock fix,
+launcher and Infinity Suite improvements, Bluetooth updates, and the matching
+sandbox and SELinux changes. OP15 features, duress PIN, stock camera/gallery
+integration, separate Vanilla/GApps OTA channels, recovery/ABL preservation,
+and zstd OTA compression are retained. The new AOD brightness control is
+integrated with the existing adaptive low/high brightness and pickup boost.
+Repositories that exactly match the reviewed official 4.1 sources are pinned
+to those commits; OP15 customizations remain in the `4.0` forks.
+
+The touch modules also include Akshay Kakatkar's S3910 single-/double-tap
+coexistence fix (LineageOS Gerrit change 507346, patchset 3), tested positively
+by Chandu. With both gestures enabled, a single tap is delayed by up to 300 ms
+to distinguish a double tap. The pending ADFR/QSync LTPO changes 504300/504301
+are not included. The common kernel remains Linux 6.12.81.
 
 The tested SetupWizard locale configuration is maintained in
 `vendor/infinity/config/gms.mk`; Google binaries remain in the upstream GMS
