@@ -3,7 +3,7 @@
   <!-- Reviewed Infinity-X 4.1 platform update, tested on infiniti on 2026-10-13.
        OP15 repository branches retain the 4.0 name for existing checkouts. -->
   <remove-project path="build/make" />
-  <project path="build/make" name="OP15InfinityX/build" remote="github" revision="refs/heads/4.0" groups="pdk,sysui-studio">
+  <project path="build/make" name="OP15InfinityX/build" remote="github" revision="refs/heads/4.1-cos17" groups="pdk,sysui-studio">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
     <linkfile src="core" dest="build/core" />
@@ -16,67 +16,67 @@
   <remove-project path="packages/resources/devicesettings" />
   <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="github" revision="e91c79901e06b1cff702d004824af620a8b2bf9c" />
   <remove-project path="frameworks/libs/systemui" />
-  <project path="frameworks/libs/systemui" name="OP15InfinityX/frameworks_libs_systemui" remote="github" revision="refs/heads/4.0" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
+  <project path="frameworks/libs/systemui" name="OP15InfinityX/frameworks_libs_systemui" remote="github" revision="refs/heads/4.1-cos17" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
   <remove-project path="frameworks/opt/telephony" />
-  <project path="frameworks/opt/telephony" name="OP15InfinityX/frameworks_opt_telephony" remote="github" revision="refs/heads/4.0" groups="pdk,sysui-studio" />
+  <project path="frameworks/opt/telephony" name="OP15InfinityX/frameworks_opt_telephony" remote="github" revision="refs/heads/4.1-cos17" groups="pdk,sysui-studio" />
   <remove-project path="packages/apps/LMOFreeform" />
-  <project path="packages/apps/LMOFreeform" name="OP15InfinityX/packages_apps_LMOFreeform" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/LMOFreeform" name="OP15InfinityX/packages_apps_LMOFreeform" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/modules/Bluetooth" />
-  <project path="packages/modules/Bluetooth" name="OP15InfinityX/packages_modules_Bluetooth" remote="github" revision="refs/heads/4.0" groups="pdk" />
+  <project path="packages/modules/Bluetooth" name="OP15InfinityX/packages_modules_Bluetooth" remote="github" revision="refs/heads/4.1-cos17" groups="pdk" />
   <remove-project path="system/fs/fs_mgr" />
-  <project path="system/fs/fs_mgr" name="OP15InfinityX/system_fs_fs_mgr" remote="github" revision="refs/heads/4.0" groups="pdk" />
+  <project path="system/fs/fs_mgr" name="OP15InfinityX/system_fs_fs_mgr" remote="github" revision="refs/heads/4.1-cos17" groups="pdk" />
   <!-- Infinity-X 4.0 platform compatibility, based on the X9U/SM8850 bring-up. -->
   <remove-project path="build/soong" />
-  <project path="build/soong" name="OP15InfinityX/android_build_soong" remote="github" revision="refs/heads/4.0" groups="pdk,tradefed,sysui-studio" />
+  <project path="build/soong" name="OP15InfinityX/android_build_soong" remote="github" revision="refs/heads/4.1-cos17" groups="pdk,tradefed,sysui-studio" />
   <remove-project path="device/lineage/sepolicy" />
-  <project path="device/lineage/sepolicy" name="OP15InfinityX/device_infinity_sepolicy" remote="github" revision="refs/heads/4.0" />
+  <project path="device/lineage/sepolicy" name="OP15InfinityX/device_infinity_sepolicy" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="frameworks/av" />
-  <project path="frameworks/av" name="OP15InfinityX/frameworks_av" remote="github" revision="refs/heads/4.0" groups="pdk,sysui-studio" />
+  <project path="frameworks/av" name="OP15InfinityX/frameworks_av" remote="github" revision="refs/heads/4.1-cos17" groups="pdk,sysui-studio" />
   <remove-project path="frameworks/base" />
-  <project path="frameworks/base" name="OP15InfinityX/android_frameworks_base" remote="github" revision="refs/heads/4.0" />
+  <project path="frameworks/base" name="OP15InfinityX/android_frameworks_base" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="frameworks/native" />
-  <project path="frameworks/native" name="OP15InfinityX/android_frameworks_native" remote="github" revision="refs/heads/4.0" groups="pdk" />
+  <project path="frameworks/native" name="OP15InfinityX/android_frameworks_native" remote="github" revision="refs/heads/4.1-cos17" groups="pdk" />
   <remove-project path="lineage-sdk" />
-  <project path="lineage-sdk" name="OP15InfinityX/custom-sdk" remote="github" revision="refs/heads/4.0" />
+  <project path="lineage-sdk" name="OP15InfinityX/custom-sdk" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/apps/AppLocker" />
-  <project path="packages/apps/AppLocker" name="OP15InfinityX/packages_apps_AppLocker" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/AppLocker" name="OP15InfinityX/packages_apps_AppLocker" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/apps/GameSpace" />
-  <project path="packages/apps/GameSpace" name="OP15InfinityX/packages_apps_GameSpace" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/GameSpace" name="OP15InfinityX/packages_apps_GameSpace" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/apps/InfinitySuite" />
-  <project path="packages/apps/InfinitySuite" name="OP15InfinityX/packages_apps_InfinitySuite" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/InfinitySuite" name="OP15InfinityX/packages_apps_InfinitySuite" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/apps/LineageParts" />
-  <project path="packages/apps/LineageParts" name="OP15InfinityX/packages_apps_Parts" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/LineageParts" name="OP15InfinityX/packages_apps_Parts" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/apps/Settings" />
-  <project path="packages/apps/Settings" name="OP15InfinityX/packages_apps_Settings" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/Settings" name="OP15InfinityX/packages_apps_Settings" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/apps/SettingsIntelligence" />
-  <project path="packages/apps/SettingsIntelligence" name="OP15InfinityX/packages_apps_SettingsIntelligence" remote="github" revision="refs/heads/4.0" groups="pdk-fs" />
+  <project path="packages/apps/SettingsIntelligence" name="OP15InfinityX/packages_apps_SettingsIntelligence" remote="github" revision="refs/heads/4.1-cos17" groups="pdk-fs" />
   <remove-project path="packages/apps/ThemeStore" />
-  <project path="packages/apps/ThemeStore" name="OP15InfinityX/packages_apps_ThemeStore" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/ThemeStore" name="OP15InfinityX/packages_apps_ThemeStore" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/apps/Updater" />
-  <project path="packages/apps/Updater" name="OP15InfinityX/packages_apps_Updater" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/Updater" name="OP15InfinityX/packages_apps_Updater" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="packages/modules/Permission" />
-  <project path="packages/modules/Permission" name="OP15InfinityX/android_packages_modules_Permission" remote="github" revision="refs/heads/4.0" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/Permission" name="OP15InfinityX/android_packages_modules_Permission" remote="github" revision="refs/heads/4.1-cos17" groups="pdk-cw-fs,pdk-fs" />
   <remove-project path="packages/providers/MediaProvider" />
-  <project path="packages/providers/MediaProvider" name="OP15InfinityX/android_packages_providers_MediaProvider" remote="github" revision="refs/heads/4.0" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
+  <project path="packages/providers/MediaProvider" name="OP15InfinityX/android_packages_providers_MediaProvider" remote="github" revision="refs/heads/4.1-cos17" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
   <remove-project path="system/core" />
-  <project path="system/core" name="OP15InfinityX/system_core" remote="github" revision="refs/heads/4.0" groups="pdk" />
+  <project path="system/core" name="OP15InfinityX/system_core" remote="github" revision="refs/heads/4.1-cos17" groups="pdk" />
   <remove-project path="system/update_engine" />
-  <project path="system/update_engine" name="OP15InfinityX/system_update_engine" remote="github" revision="refs/heads/4.0" groups="pdk" />
+  <project path="system/update_engine" name="OP15InfinityX/system_update_engine" remote="github" revision="refs/heads/4.1-cos17" groups="pdk" />
   <remove-project path="system/vold" />
-  <project path="system/vold" name="OP15InfinityX/system_vold" remote="github" revision="refs/heads/4.0" groups="pdk" />
+  <project path="system/vold" name="OP15InfinityX/system_vold" remote="github" revision="refs/heads/4.1-cos17" groups="pdk" />
   <remove-project path="vendor/extras" />
-  <project path="vendor/extras" name="OP15InfinityX/vendor_extras" remote="github" revision="refs/heads/4.0" />
+  <project path="vendor/extras" name="OP15InfinityX/vendor_extras" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="vendor/infinity" />
-  <project path="vendor/infinity" name="OP15InfinityX/vendor_infinity" remote="github" revision="refs/heads/4.0" />
+  <project path="vendor/infinity" name="OP15InfinityX/vendor_infinity" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="vendor/qcom/opensource/healthd-ext" />
-  <project path="vendor/qcom/opensource/healthd-ext" name="OP15InfinityX/android_vendor_qcom_opensource_healthd-ext" remote="github" revision="refs/heads/4.0" groups="qcom,kaanapali-vendor" />
+  <project path="vendor/qcom/opensource/healthd-ext" name="OP15InfinityX/android_vendor_qcom_opensource_healthd-ext" remote="github" revision="refs/heads/4.1-cos17" groups="qcom,kaanapali-vendor" />
 
   <remove-project path="packages/apps/Launcher3" />
-  <project path="packages/apps/Launcher3" name="OP15InfinityX/packages_apps_Launcher3" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/apps/Launcher3" name="OP15InfinityX/packages_apps_Launcher3" remote="github" revision="refs/heads/4.1-cos17" />
 
   <!-- Keep the tested OP15 clock/Smartspace overlay layout. -->
   <remove-project path="packages/overlays/Themes" />
-  <project path="packages/overlays/Themes" name="OP15InfinityX/packages_overlays_Themes" remote="github" revision="refs/heads/4.0" />
+  <project path="packages/overlays/Themes" name="OP15InfinityX/packages_overlays_Themes" remote="github" revision="refs/heads/4.1-cos17" />
 
   <!-- These repositories match official 4.1 exactly. Pin the reviewed commits
        so a fresh sync gets the corresponding sandbox, policy and memory APIs. -->

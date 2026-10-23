@@ -1,10 +1,10 @@
 # OnePlus 15 Infinity-X 4.1
 
 Local manifests for Infinity-X 4.1 / Android 17 on the OnePlus 15 (`infiniti`).
-The repository branches remain named `4.0` for existing checkouts.
+This branch uses `4.1-cos17` for every OP15-owned project. Existing `4.0` branches are unchanged.
 
 This branch keeps the tested Infinity-X 3.12 device/common baseline, adds the
-required Android 17 adaptations, and retains OxygenOS **16.0.8 GLO** proprietary
+required Android 17 adaptations, and uses ColorOS **17.0.0.102 IN** proprietary
 files. Audio and display HALs remain stock. The kernel is built from source:
 Linux **6.12.81**, including the existing panel and module fixes.
 
@@ -44,7 +44,7 @@ by Chandu. With both gestures enabled, a single tap is delayed by up to 300 ms
 to distinguish a double tap. The pending ADFR/QSync LTPO changes 504300/504301
 are not included. The common kernel remains Linux 6.12.81.
 
-The tested SetupWizard locale configuration is maintained in
+The existing SetupWizard locale configuration is maintained in
 `vendor/infinity/config/gms.mk`; Google binaries remain in the upstream GMS
 repository. The device disables locale-agnostic onboarding to retain language
 selection, and Settings includes the language-picker crash fix.
@@ -52,6 +52,37 @@ selection, and Settings includes the language-picker crash fix.
 Vanilla builds include the Infinity-X partition reserve configuration: about
 1.82 GiB in `product` and 90 MiB each in `system` and `system_ext` for later
 GApps installation. These extra reserves are not applied to GApps builds.
+
+## COS17 port (2026-10-23)
+
+All three proprietary-file lists now select the OnePlus 15 CPH2745
+**17.0.0.102(EX01), IN** full OTA. Extract the required stock partitions,
+including `my_product`, `my_stock`, `my_bigball`, `my_heytap`, `my_carrier` and
+`my_region` when present, along with the standard Android partitions and the
+firmware images. Keep the partition directory names from the OTA; do not mix
+these inputs with files extracted from the old GLO OTA.
+
+The port includes:
+
+- COS17 firmware/native/app inputs and matching vendor interface versions.
+- The missing IMS `libSurfaceUtil_jni` app-library dependency.
+- The correct Surface JNI return signature used by the new camera libraries.
+- Material parameter APIs and checks for the actual proprietary renderer APIs.
+- The original AppFeature provider classes and database contract.
+- Mind Space's consent permission and both AIUnit search preference XML roots.
+- The Recorder Activity state wrapper and Oplus policy-file return contract.
+- Chandu's HBP5 report-interface patch, with original author and Change-Id,
+  and the matching enforcing device-node label.
+
+FBE remains enabled in the published source. Audio and display HALs remain
+stock; the OSS kernel and all previously published OP15 customizations are
+retained. Newly identified, unvalidated logspam fixes, host build workarounds,
+private ADB keys and unrelated local platform experiments are excluded.
+
+The maintainer has built and booted this COS17 device/app port with SELinux
+Enforcing and tested the main apps. No claim is made that every camera mode or
+all remaining OEM diagnostics have been resolved. A clean build from this exact
+new manifest has not been performed by the publishing agent.
 
 ## Sync
 
@@ -62,7 +93,7 @@ repo init --no-repo-verify --git-lfs \
   -u https://github.com/ProjectInfinity-X/manifest \
   -b 17 -g default,-mips,-darwin,-notdefault
 
-git clone -b 4.0 https://github.com/OP15InfinityX/local_manifests \
+git clone -b 4.1-cos17 https://github.com/OP15InfinityX/local_manifests \
   .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune \
@@ -71,7 +102,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune \
 
 Do not combine these XML files with the 3.12 local manifests: they override many
 of the same project paths. Back up personal changes before syncing an existing
-tree. The OP15-specific forks referenced here use the `4.0` branch.
+tree. The OP15-specific forks referenced here use the `4.1-cos17` branch.
 
 The manifests follow the same three-file layout as the 3.12 branch:
 
@@ -83,7 +114,7 @@ All three XML files are loaded automatically by repo.
 
 ## Extract proprietary files
 
-Download the full OnePlus 15 OxygenOS **16.0.8 GLO** OTA. Extract the logical
+Download the full OnePlus 15 ColorOS **17.0.0.102 IN** OTA. Extract the logical
 images into partition directories (`system`, `system_ext`, `product`, `vendor`,
 `odm`, and the remaining stock partitions).
 
