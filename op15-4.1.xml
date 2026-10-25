@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- Reviewed Infinity-X 4.1 platform update, tested on infiniti on 2026-10-13.
-       OP15 repository branches retain the 4.0 name for existing checkouts. -->
+       OP15 repository branches use 4.1-cos17. -->
   <remove-project path="build/make" />
   <project path="build/make" name="OP15InfinityX/build" remote="github" revision="refs/heads/4.1-cos17" groups="pdk,sysui-studio">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
