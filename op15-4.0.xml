@@ -81,7 +81,7 @@
   <!-- These repositories match official 4.1 exactly. Pin the reviewed commits
        so a fresh sync gets the corresponding sandbox, policy and memory APIs. -->
   <remove-project path="bionic" />
-  <project path="bionic" name="bionic" remote="infinity" revision="9eef83c6aab6019cd91df31c5fc5b7d516ff5947" groups="pdk" />
+  <project path="bionic" name="bionic" remote="infinity" revision="f803459db992cc4370e8a7a06cfd47291a65ce4d" groups="pdk" />
   <remove-project path="packages/apps/Sandbox" />
   <project path="packages/apps/Sandbox" name="packages_apps_Sandbox" remote="infinity" revision="aca849f56b83ec6707af502d44b4b66e594f1280" />
   <remove-project path="packages/services/OmniJaws" />
