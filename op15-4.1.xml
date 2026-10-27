@@ -74,6 +74,10 @@
   <remove-project path="packages/apps/Launcher3" />
   <project path="packages/apps/Launcher3" name="OP15InfinityX/packages_apps_Launcher3" remote="github" revision="refs/heads/4.1-cos17" />
 
+  <!-- Keep the tested framework clock font in the wallpaper preview. -->
+  <remove-project path="packages/apps/WallpaperPicker2" />
+  <project path="packages/apps/WallpaperPicker2" name="OP15InfinityX/packages_apps_WallpaperPicker2" remote="github" revision="refs/heads/4.1-cos17" groups="pdk-fs,sysui-studio" />
+
   <!-- Keep the tested OP15 clock/Smartspace overlay layout. -->
   <remove-project path="packages/overlays/Themes" />
   <project path="packages/overlays/Themes" name="OP15InfinityX/packages_overlays_Themes" remote="github" revision="refs/heads/4.1-cos17" />
