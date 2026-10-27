@@ -100,10 +100,18 @@ The device now uses the matching LineageOS 24 COS17 source components:
 - Display composer, allocator, mapper, demura service and matching display core.
   OEM GPU/color/Pixelworks extensions remain proprietary. The source stack
   forwards the existing OnePlus auto-ADFR request to the kernel's
-  `qsync_min_fps` property independently of standard QSync. SystemUI is allowed
-  to suspend the AOD panel state, preserving working low-refresh operation.
+  `qsync_min_fps` property independently of standard QSync. AOD uses active
+  low-power doze so Pulse and charging animations keep receiving frames; LTPO
+  handles the idle minimum refresh rate independently.
 - IPACM, its configurations, IPANAT and the AIDL tethering offload implementation.
   The obsolete flag suppressing the source IPACM namespace is removed.
+- FusionLight wraps the retained Qualcomm sensors SubHAL with the source ALS
+  correction algorithm. The device selects the matching stock sensor properties,
+  BOE/Tianma TCS3760 profiles, and the OPlus sensor calibration service. Both
+  legacy and black-frame V2.1 profiles are supported by the source wrapper.
+- The charger reports an unavailable charge-time estimate as missing data,
+  allowing Android to use its charging history instead of interpreting zero as
+  an immediate full charge. Valid estimates and zero at full charge are retained.
 - The COS17 offline camera metadata fix reads the allocation size from the
   source SnapHandle layout. It is applied during extraction; no manually
   modified blob or second OTA is needed.
