@@ -41,6 +41,22 @@ integrated with the existing adaptive low/high brightness and pickup boost.
 Repositories that exactly match the reviewed official 4.1 sources are pinned
 to those commits; OP15 customizations remain in the `4.1-cos17` forks.
 
+The 2026-10-29 source update incorporates the latest published Infinity-X
+Glass blur renderer and SystemUI updates, launcher and Settings fixes,
+the optional custom AOD brightness switch, and the matching Sandbox fix.
+The official manifest dependency changes are included. OP15-specific
+AOD low/high brightness and pickup boost, Dynamic Island controls,
+fingerprint/PIN behavior, camera compatibility, SetupWizard locale handling,
+OTA variants and zstd remain in place. Build and device testing are pending.
+
+The additional 2026-10-29 fixes correct Codec2 interface declarations,
+allow the sensor-health monitor to read clocks, derive Power HAL capability
+masks from its supported modes/boosts, and avoid unwanted wake-ups when the
+power manager stops AOD. Original authors and Change-Ids are retained.
+The Power HAL is selected from the OP15 `android_vendor_qcom_opensource_power`
+fork on `4.1-cos17`; unchanged IX manifest dependencies are pinned to the
+reviewed commits so new syncs use the same interfaces and certificate set.
+
 The touch modules also include Akshay Kakatkar's S3910 single-/double-tap
 coexistence fix (LineageOS Gerrit change 507346, patchset 3), tested positively
 by Chandu. With both gestures enabled, a single tap is delayed by up to 300 ms

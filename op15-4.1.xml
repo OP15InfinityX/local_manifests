@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- Reviewed Infinity-X 4.1 platform update, tested on infiniti on 2026-10-13.
+  <!-- Infinity-X 4.1 platform updated through 2026-10-29; device validation pending.
        OP15 repository branches use 4.1-cos17. -->
   <remove-project path="build/make" />
   <project path="build/make" name="OP15InfinityX/build" remote="github" revision="refs/heads/4.1-cos17" groups="pdk,sysui-studio">
@@ -70,6 +70,8 @@
   <project path="vendor/infinity" name="OP15InfinityX/vendor_infinity" remote="github" revision="refs/heads/4.1-cos17" />
   <remove-project path="vendor/qcom/opensource/healthd-ext" />
   <project path="vendor/qcom/opensource/healthd-ext" name="OP15InfinityX/android_vendor_qcom_opensource_healthd-ext" remote="github" revision="refs/heads/4.1-cos17" groups="qcom,kaanapali-vendor" />
+  <remove-project path="vendor/qcom/opensource/power" />
+  <project path="vendor/qcom/opensource/power" name="OP15InfinityX/android_vendor_qcom_opensource_power" remote="github" revision="refs/heads/4.1-cos17" groups="qcom" />
 
   <remove-project path="packages/apps/Launcher3" />
   <project path="packages/apps/Launcher3" name="OP15InfinityX/packages_apps_Launcher3" remote="github" revision="refs/heads/4.1-cos17" />
@@ -87,9 +89,25 @@
   <remove-project path="bionic" />
   <project path="bionic" name="bionic" remote="infinity" revision="f803459db992cc4370e8a7a06cfd47291a65ce4d" groups="pdk" />
   <remove-project path="packages/apps/Sandbox" />
-  <project path="packages/apps/Sandbox" name="packages_apps_Sandbox" remote="infinity" revision="aca849f56b83ec6707af502d44b4b66e594f1280" />
+  <project path="packages/apps/Sandbox" name="packages_apps_Sandbox" remote="infinity" revision="ed092ec7317a65825069d56ef691740c99c7f887" />
   <remove-project path="packages/services/OmniJaws" />
   <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="infinity" revision="ab4a697b022f2cb97102c1d8a48055751f4bd27b" />
   <remove-project path="system/sepolicy" />
   <project path="system/sepolicy" name="system_sepolicy" remote="infinity" revision="d125e3765296e2c64e1bbdfad7bcff90c35ac1d3" groups="pdk" />
+
+  <!-- Unmodified dependencies selected by the 2026-10-29 official IX manifest. -->
+  <remove-project path="art" />
+  <project path="art" name="art" remote="infinity" revision="8a390996d12a333da8947ecdf4e4b20a78749fdb" groups="pdk" />
+  <remove-project path="external/conscrypt" />
+  <project path="external/conscrypt" name="LineageOS/android_external_conscrypt" remote="github" revision="98b5842746b92120e30ba3ddc8b1f975b8b7f897" groups="pdk" />
+  <remove-project path="external/selinux" />
+  <project path="external/selinux" name="LineageOS/android_external_selinux" remote="github" revision="fbd5d3e731d34bc2ad6e5cacc43efa3a14a863c4" groups="pdk" />
+  <remove-project path="frameworks/hardware/interfaces" />
+  <project path="frameworks/hardware/interfaces" name="LineageOS/android_frameworks_hardware_interfaces" remote="github" revision="f80da5a738798ed94d061f79ebe78edf26391424" groups="pdk,sysui-studio" />
+  <remove-project path="hardware/google/interfaces" />
+  <project path="hardware/google/interfaces" name="LineageOS/android_hardware_google_interfaces" remote="github" revision="17741d228def813f7a1c03003b2c87f0d0e32b93" groups="pdk,sysui-studio" />
+  <remove-project path="system/ca-certificates" />
+  <project path="system/ca-certificates" name="LineageOS/android_system_ca-certificates" remote="github" revision="3eafa7527b96dee31eb8afd7586f3e4ca8c07de0" groups="pdk" />
+  <remove-project path="system/usb" />
+  <project path="system/usb" name="LineageOS/android_system_usb" remote="github" revision="2c8cc049b8d42dee64c361e0d1f27ca051f2d1be" groups="pdk" />
 </manifest>
