@@ -49,6 +49,18 @@ AOD low/high brightness and pickup boost, Dynamic Island controls,
 fingerprint/PIN behavior, camera compatibility, SetupWizard locale handling,
 OTA variants and zstd remain in place. Build and device testing are pending.
 
+The 2026-10-30 integration merges the matching Infinity-X updates in
+frameworks/base, InfinitySuite, Settings, custom-sdk, Parts and telephony.
+It includes the Play Integrity/TrickyStore changes, LiveDisplay updates,
+multi-SIM ringtone handling and WAP-Push header validation. Telecomm and
+the Android 17 OmniStyle are pinned to the exact upstream commits used by
+the successful GApps and Vanilla full builds. OP15 PlusKey, Dynamic Island,
+AOD, duress PIN, camera compatibility and OTA customizations are retained.
+Device testing of this latest integration remains pending.
+The DT2W setting also remains effective across reboots: restoring other
+off-screen gestures preserves its state, and PowerManager applies the
+saved setting at startup. This DT2W fix was verified on the device.
+
 The additional 2026-10-29 fixes correct Codec2 interface declarations,
 allow the sensor-health monitor to read clocks, derive Power HAL capability
 masks from its supported modes/boosts, and avoid unwanted wake-ups when the
