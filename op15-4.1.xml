@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- Infinity-X 4.1 platform updated through 2026-10-30; GApps/Vanilla builds verified.
+  <!-- Infinity-X 4.1 platform updated through 2026-11-06; November security dependencies included.
        OP15 repository branches use 4.1-cos17. -->
   <remove-project path="build/make" />
   <project path="build/make" name="OP15InfinityX/build" remote="github" revision="refs/heads/4.1-cos17" groups="pdk,sysui-studio">
@@ -87,7 +87,7 @@
   <!-- These repositories match official 4.1 exactly. Pin the reviewed commits
        so a fresh sync gets the corresponding sandbox, policy and memory APIs. -->
   <remove-project path="bionic" />
-  <project path="bionic" name="bionic" remote="infinity" revision="f803459db992cc4370e8a7a06cfd47291a65ce4d" groups="pdk" />
+  <project path="bionic" name="bionic" remote="infinity" revision="080c8edadfcd765aeebe95328344a997a337d753" groups="pdk" />
   <remove-project path="packages/apps/Sandbox" />
   <project path="packages/apps/Sandbox" name="packages_apps_Sandbox" remote="infinity" revision="ed092ec7317a65825069d56ef691740c99c7f887" />
   <remove-project path="packages/services/OmniJaws" />
@@ -115,4 +115,38 @@
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="infinity" revision="cf1c831790ec8c946dad6e17ee1e90fb0a88fc00" groups="pdk-cw-fs,pdk-fs" />
   <remove-project path="packages/apps/OmniStyle" />
   <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="infinity" revision="4ddbb664795d3dfc4d3bc310b3e4e58c93e322d2" clone-depth="1" />
+
+  <!-- Matching LineageOS dependencies selected by the November IX manifest. -->
+  <remove-project path="external/aac" />
+  <project path="external/aac" name="LineageOS/android_external_aac" remote="github" revision="17e6fce899d5d771b63445b587ef53e72175253a" groups="pdk" />
+  <remove-project path="external/hplip" />
+  <project path="external/hplip" name="LineageOS/android_external_hplip" remote="github" revision="74b6832b22713873998559bc788f275ff90b95cd" groups="pdk" />
+  <remove-project path="external/libopenapv" />
+  <project path="external/libopenapv" name="LineageOS/android_external_libopenapv" remote="github" revision="36c17db1d86213f92ac166eb7266cea799ac75b5" groups="pdk" />
+  <remove-project path="external/tremolo" />
+  <project path="external/tremolo" name="LineageOS/android_external_tremolo" remote="github" revision="04f93e8026edaafcd11eff36fba76cb9cd846f16" groups="pdk" />
+  <remove-project path="hardware/broadcom/wlan" />
+  <project path="hardware/broadcom/wlan" name="LineageOS/android_hardware_broadcom_wlan" remote="github" revision="64ffcd8e40ffc4c4b04a131ee401d0a96222097a" groups="pdk,broadcom_wlan" />
+  <remove-project path="packages/apps/ManagedProvisioning" />
+  <project path="packages/apps/ManagedProvisioning" name="LineageOS/android_packages_apps_ManagedProvisioning" remote="github" revision="12cd4e297e6fcdd6cd33b91e81a767506f786956" groups="pdk-fs" />
+  <remove-project path="packages/modules/IntentResolver" />
+  <project path="packages/modules/IntentResolver" name="LineageOS/android_packages_modules_IntentResolver" remote="github" revision="e3670d5711c7e806cfbdb44c6e9963a95300faba" groups="pdk,sysui-studio" />
+  <remove-project path="packages/modules/NeuralNetworks" />
+  <project path="packages/modules/NeuralNetworks" name="LineageOS/android_packages_modules_NeuralNetworks" remote="github" revision="1905cbda6547b5658a71d00f8fdd4cebb1abddc5" groups="pdk-cw-fs,pdk-fs" />
+  <remove-project path="packages/modules/Profiling" />
+  <project path="packages/modules/Profiling" name="LineageOS/android_packages_modules_Profiling" remote="github" revision="9d7570458fce594f1431f20d5b857b4966ea7a0b" groups="pdk" />
+  <remove-project path="packages/services/Iwlan" />
+  <project path="packages/services/Iwlan" name="LineageOS/android_packages_services_Iwlan" remote="github" revision="7df1770d5ab4f671e7a2f63074199221ec60a2c8" groups="pdk-cw-fs,pdk-fs" />
+  <remove-project path="system/gsid" />
+  <project path="system/gsid" name="LineageOS/android_system_gsid" remote="github" revision="abcc9f711e157901382b180d8ed0a418a0545c17" groups="pdk" />
+  <remove-project path="trusty/user/base" />
+  <project path="trusty/user/base" name="LineageOS/android_trusty_user_base" remote="github" revision="058cbb7314268dd01c13263affc593ed87426b04" groups="trusty,pdk" />
+
+  <!-- Unmodified IX November components; pin the exact reviewed source trees. -->
+  <remove-project path="packages/apps/ThemePicker" />
+  <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="infinity" revision="77585d56f3925a43cf85054500b398b21a23efbd" />
+  <remove-project path="packages/modules/Connectivity" />
+  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" remote="infinity" revision="0d980c01060b1dd6280ba6a59471c098bd82ed6a" />
+  <remove-project path="packages/modules/Wifi" />
+  <project path="packages/modules/Wifi" name="packages_modules_Wifi" remote="infinity" revision="e2ef5e863f8481da79a0065b8204ce76531c57eb" />
 </manifest>

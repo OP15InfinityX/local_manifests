@@ -61,6 +61,24 @@ The DT2W setting also remains effective across reboots: restoring other
 off-screen gestures preserves its state, and PowerManager applies the
 saved setting at startup. This DT2W fix was verified on the device.
 
+The 2026-11-06 integration includes the November 2026 security patch and
+matching IX/LineageOS dependencies, media and Bluetooth safety fixes, Wi-Fi
+permission checks, SIM/IMS handling and updated ROM-hiding behavior. The
+unchanged upstream components are pinned to the reviewed commits.
+
+The LOS charger cool-down package derives charging-current levels from the
+same COS17 thermal policy and shell-temperature sensors while the screen is
+interactive. Existing CPU/GPU thermal limits remain unchanged. Original
+authors and Change-Ids are retained for the selected LOS patches.
+
+Wireless Earphones is updated to the complete pinned Melody 17.6.6 release.
+Its extraction fixups check the real material/caustic renderer capabilities
+before enabling OEM effects, fixing the OplusMaterialUtil toolbar crash.
+The source APK and provenance are bundled in the camera tree; no second OTA
+or manual store download is needed. App data and the ROM signing strategy
+are retained. The full GApps build succeeded, and the Melody fix was
+regenerated through the extraction pipeline and verified on the device.
+
 The additional 2026-10-29 fixes correct Codec2 interface declarations,
 allow the sensor-health monitor to read clocks, derive Power HAL capability
 masks from its supported modes/boosts, and avoid unwanted wake-ups when the
