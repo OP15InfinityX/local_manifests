@@ -2,13 +2,13 @@
 <manifest>
   <!-- Device, common hardware and retained CAF dependencies. -->
   <!-- IX device/common baseline with COS17 source audio/display modules with the required proprietary extensions. -->
-  <project path="device/oneplus/infiniti" name="OP15InfinityX/android_device_oneplus_infiniti" remote="github" revision="refs/heads/4.1-cos17" />
-  <project path="device/oneplus/sm8850-common" name="OP15InfinityX/android_device_oneplus_sm8850-common" remote="github" revision="refs/heads/4.1-cos17" />
-  <project path="device/oneplus/infiniti-camera" name="OP15InfinityX/android_device_oneplus_infiniti-camera" remote="github" revision="refs/heads/4.1-cos17" />
-  <project path="device/qcom/sepolicy_vndr/sm8850" name="OP15InfinityX/android_device_qcom_sepolicy_vndr" remote="github" revision="refs/heads/4.1-cos17" groups="qcom,kaanapali-vendor" />
-  <project path="hardware/oplus" name="OP15InfinityX/android_hardware_oplus" remote="github" revision="refs/heads/4.1-cos17" />
+  <project path="device/oneplus/infiniti" name="OP15InfinityX/android_device_oneplus_infiniti" remote="github" revision="refs/heads/4.2-cos17" />
+  <project path="device/oneplus/sm8850-common" name="OP15InfinityX/android_device_oneplus_sm8850-common" remote="github" revision="refs/heads/4.2-cos17" />
+  <project path="device/oneplus/infiniti-camera" name="OP15InfinityX/android_device_oneplus_infiniti-camera" remote="github" revision="refs/heads/4.2-cos17" />
+  <project path="device/qcom/sepolicy_vndr/sm8850" name="OP15InfinityX/android_device_qcom_sepolicy_vndr" remote="github" revision="refs/heads/4.2-cos17" groups="qcom,kaanapali-vendor" />
+  <project path="hardware/oplus" name="OP15InfinityX/android_hardware_oplus" remote="github" revision="refs/heads/4.2-cos17" />
   <remove-project name="LineageOS/android_hardware_qcom-caf_common" />
-  <project path="hardware/qcom-caf/common" name="OP15InfinityX/android_hardware_qcom-caf_common" remote="github" revision="refs/heads/4.1-cos17" groups="qcom">
+  <project path="hardware/qcom-caf/common" name="OP15InfinityX/android_hardware_qcom-caf_common" remote="github" revision="refs/heads/4.2-cos17" groups="qcom">
     <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
     <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
     <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/msm8953/Android.bp" />
@@ -23,15 +23,15 @@
     <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8750/Android.bp" />
     <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8850/Android.bp" />
   </project>
-  <project path="hardware/qcom-caf/sm8850/audio/primary-hal" name="OP15InfinityX/android_hardware_qcom_audio-ar" remote="github" revision="refs/heads/4.1-cos17" groups="qcom,kaanapali-audio" />
+  <project path="hardware/qcom-caf/sm8850/audio/primary-hal" name="OP15InfinityX/android_hardware_qcom_audio-ar" remote="github" revision="refs/heads/4.2-cos17" groups="qcom,kaanapali-audio" />
   <remove-project path="vendor/qcom/opensource/audio-hal/st-hal-ar" />
   <project path="vendor/qcom/opensource/audio-hal/st-hal-ar" name="LineageOS/android_vendor_qcom_opensource_audio-hal_st-hal-ar" remote="github" revision="2b05733d2d7c0e6f3813d51ae0216160f4fef681" groups="qcom,kaanapali-audio" />
   <!-- Pin unmodified dependencies to the tested LOS 24 COS17 commits. -->
   <project path="hardware/qcom-caf/sm8850/audio/agm" name="LineageOS/android_vendor_qcom_opensource_agm" remote="github" revision="ddb43619de0aee37b95f2e1720cc9f186355ad1e" groups="qcom,kaanapali-audio" />
   <project path="hardware/qcom-caf/sm8850/audio/graphservices" name="LineageOS/android_vendor_qcom_opensource_audioreach-graphservices" remote="github" revision="80098a6384e3447fdf2dfb3bec0e9c61b950f42b" groups="qcom,kaanapali-audio" />
-  <project path="hardware/qcom-caf/sm8850/audio/pal" name="OP15InfinityX/android_vendor_qcom_opensource_arpal-lx" remote="github" revision="refs/heads/4.1-cos17" groups="qcom,kaanapali-audio" />
-  <project path="hardware/qcom-caf/sm8850/display/core" name="OP15InfinityX/android_vendor_qcom_opensource_display-core" remote="github" revision="refs/heads/4.1-cos17" groups="qcom,kaanapali-display" />
-  <project path="hardware/qcom-caf/sm8850/display/hal" name="OP15InfinityX/android_hardware_qcom_display" remote="github" revision="refs/heads/4.1-cos17" groups="qcom,kaanapali-display" />
+  <project path="hardware/qcom-caf/sm8850/audio/pal" name="OP15InfinityX/android_vendor_qcom_opensource_arpal-lx" remote="github" revision="refs/heads/4.2-cos17" groups="qcom,kaanapali-audio" />
+  <project path="hardware/qcom-caf/sm8850/display/core" name="OP15InfinityX/android_vendor_qcom_opensource_display-core" remote="github" revision="refs/heads/4.2-cos17" groups="qcom,kaanapali-display" />
+  <project path="hardware/qcom-caf/sm8850/display/hal" name="OP15InfinityX/android_hardware_qcom_display" remote="github" revision="refs/heads/4.2-cos17" groups="qcom,kaanapali-display" />
   <project path="hardware/qcom-caf/sm8850/display/intf" name="LineageOS/android_vendor_qcom_opensource_display-intf" remote="github" revision="70a4f1221f36758cb22595470571fcee5b976561" groups="qcom,kaanapali-display" />
   <project path="hardware/qcom-caf/sm8850/data-ipa-cfg-mgr" name="LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr" remote="github" revision="7609751c45981edb1a2c1be1e638b4748525c171" groups="qcom,kaanapali-vendor" />
   <project path="hardware/qcom-caf/sm8850/dataipa" name="LineageOS/android_vendor_qcom_opensource_dataipa" remote="github" revision="4b9d4eccbe0ffc0bc1d89bb0eb0642a1365c34b0" groups="qcom,kaanapali-vendor" />

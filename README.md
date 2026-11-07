@@ -1,9 +1,9 @@
-# OnePlus 15 Infinity-X 4.1
+# OnePlus 15 Infinity-X 4.2
 
-Local manifests for Infinity-X 4.1 / Android 17 on the OnePlus 15 (`infiniti`).
-This branch uses `4.1-cos17` for every OP15-owned project. It is also the
+Local manifests for Infinity-X 4.2 / Android 17 on the OnePlus 15 (`infiniti`).
+This branch uses `4.2-cos17` for every OP15-owned project. It is also the
 default branch of the OP15InfinityX repositories used here. Existing `4.0`
-branches remain available.
+and `4.1-cos17` branches remain available as rollback points.
 
 This branch keeps the tested Infinity-X 3.12 device/common baseline, adds the
 required Android 17 adaptations, and uses ColorOS **17.0.0.102 IN** proprietary
@@ -15,8 +15,8 @@ The OP15 forks include the 2026-09-29 Infinity-X final feature-restoration
 merges in frameworks/base, Settings and InfinitySuite, preserving the OP15
 adaptations and duress PIN support. Custom-clock/AOD handling and the required
 HideClock, HideSmartSpace and SmartSpaceOffset overlays are included; the overlay
-packages are supplied by the OP15 `packages_overlays_Themes` branch `4.1-cos17`.
-The ROM version is now `4.1`.
+packages are supplied by the OP15 `packages_overlays_Themes` branch `4.2-cos17`.
+The ROM version is now `4.2`.
 
 The 2026-09-30 kernel update adds 27 selected fixes across the kernel, modules
 and devicetrees repositories. Original authors and upstream commit IDs are
@@ -39,7 +39,7 @@ integration, separate Vanilla/GApps OTA channels, recovery/ABL preservation,
 and zstd OTA compression are retained. The new AOD brightness control is
 integrated with the existing adaptive low/high brightness and pickup boost.
 Repositories that exactly match the reviewed official 4.1 sources are pinned
-to those commits; OP15 customizations remain in the `4.1-cos17` forks.
+to those commits; OP15 customizations remain in the `4.2-cos17` forks.
 
 The 2026-10-29 source update incorporates the latest published Infinity-X
 Glass blur renderer and SystemUI updates, launcher and Settings fixes,
@@ -47,7 +47,7 @@ the optional custom AOD brightness switch, and the matching Sandbox fix.
 The official manifest dependency changes are included. OP15-specific
 AOD low/high brightness and pickup boost, Dynamic Island controls,
 fingerprint/PIN behavior, camera compatibility, SetupWizard locale handling,
-OTA variants and zstd remain in place. Build and device testing are pending.
+OTA variants and zstd remain in place. These changes are retained in the current tested integration.
 
 The 2026-10-30 integration merges the matching Infinity-X updates in
 frameworks/base, InfinitySuite, Settings, custom-sdk, Parts and telephony.
@@ -56,10 +56,36 @@ multi-SIM ringtone handling and WAP-Push header validation. Telecomm and
 the Android 17 OmniStyle are pinned to the exact upstream commits used by
 the successful GApps and Vanilla full builds. OP15 PlusKey, Dynamic Island,
 AOD, duress PIN, camera compatibility and OTA customizations are retained.
-Device testing of this latest integration remains pending.
 The DT2W setting also remains effective across reboots: restoring other
 off-screen gestures preserves its state, and PowerManager applies the
 saved setting at startup. This DT2W fix was verified on the device.
+
+The 2026-11-07 integration updates the published Infinity-X sources to 4.2.
+It retains the tested OP15 camera and Gallery HEIC/color fixes, AOD brightness
+and LTPO handling, source audio/display stack, fingerprint/PIN behavior,
+SetupWizard locale handling, duress PIN, OTA variants and zstd compression.
+Dynamic Island retains its thickness and fine vertical-position settings;
+the upstream horizontal-position control and shade visibility fix are added.
+The official HWC-decoration override replaces the equivalent OP15 resource,
+with the same device-specific setting. OP15 repositories continue to use
+the `4.2-cos17` branch. The full GApps user build completed successfully. The maintainer
+reports successful feature tests, and ADB checks found no new crashes,
+ANRs or watchdogs with SELinux Enforcing.
+
+The 2026-11-06 camera fixes are included in this branch: completed HEIF
+captures are promoted correctly, the stock HEIF decoder dependencies are
+extracted, and the small encoder JNI bridge is built from source with the
+correct chroma format. The APS bitmap fix corrects new Gallery previews
+without modifying the Gallery APK. New JPEG and genuine HEVC/HEIC photos
+were verified on the rebuilt ROM with correct opening/closing colors.
+Previously cached previews of older photos are not rewritten.
+
+Bluetooth retains legacy A2DP codec sessions when a game requests a
+different link latency. This avoids unnecessary LDAC/legacy-codec session
+restarts while preserving link-latency requests and the Codec Extensibility
+reconfiguration path. The change is included in the built ROM; the
+original Sony XM5/Pokemon GO report was not reproduced with that headset
+during this publication.
 
 The 2026-11-06 integration includes the November 2026 security patch and
 matching IX/LineageOS dependencies, media and Bluetooth safety fixes, Wi-Fi
@@ -84,7 +110,7 @@ allow the sensor-health monitor to read clocks, derive Power HAL capability
 masks from its supported modes/boosts, and avoid unwanted wake-ups when the
 power manager stops AOD. Original authors and Change-Ids are retained.
 The Power HAL is selected from the OP15 `android_vendor_qcom_opensource_power`
-fork on `4.1-cos17`; unchanged IX manifest dependencies are pinned to the
+fork on `4.2-cos17`; unchanged IX manifest dependencies are pinned to the
 reviewed commits so new syncs use the same interfaces and certificate set.
 
 The touch modules also include Akshay Kakatkar's S3910 single-/double-tap
@@ -185,7 +211,7 @@ repo init --no-repo-verify --git-lfs \
   -u https://github.com/ProjectInfinity-X/manifest \
   -b 17 -g default,-mips,-darwin,-notdefault
 
-git clone -b 4.1-cos17 https://github.com/OP15InfinityX/local_manifests \
+git clone -b 4.2-cos17 https://github.com/OP15InfinityX/local_manifests \
   .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune \
@@ -194,13 +220,13 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune \
 
 Do not combine these XML files with the 3.12 local manifests: they override many
 of the same project paths. Back up personal changes before syncing an existing
-tree. The OP15-specific forks referenced here use the `4.1-cos17` branch.
+tree. The OP15-specific forks referenced here use the `4.2-cos17` branch.
 
 The manifests follow the same three-file layout as the 3.12 branch:
 
 - `infiniti.xml`: device, common, camera, hardware and CAF dependencies.
 - `infiniti-kernel.xml`: source-built kernel, modules and devicetrees.
-- `op15-4.1.xml`: ROM/platform repository overrides.
+- `op15-4.2.xml`: ROM/platform repository overrides.
 
 All three XML files are loaded automatically by repo.
 
