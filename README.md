@@ -11,6 +11,20 @@ files. Audio services/plugins, display and IPACM use the tested LineageOS 24
 source stack with the required COS17 proprietary extensions. The kernel is built from source:
 Linux **6.12.81**, including the existing panel and module fixes.
 
+The 2026-11-12 integration merges the reviewed Infinity-X updates while
+retaining OP15 customizations. It includes LiveDisplay color-adjustment
+persistence, Wireless Display compatibility and the ConsumerIR signing fix.
+The time-lapse/quick-video EIS fix and optional AOD media controls are retained.
+Scrolling screenshots now target 5.5 pages; a live capture was saved at
+1272 x 15439 pixels, below the device's 16384-pixel GPU texture limit.
+
+Mind Pilot, Agent Framework and OnePlus Account are extracted from the same
+COS17 OTA and installed with the required signing, permissions and enforcing
+SELinux rules. Chat and account login were verified live. Device-control
+automation and the full set of stock AI skills are not enabled or promised.
+AOD media controls remain off by default; keeping their touch controls active
+can increase idle power consumption.
+
 The OP15 forks include the 2026-09-29 Infinity-X final feature-restoration
 merges in frameworks/base, Settings and InfinitySuite, preserving the OP15
 adaptations and duress PIN support. Custom-clock/AOD handling and the required
